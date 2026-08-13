@@ -38,6 +38,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      # abaplint treats "no files matched" as an error and exits 2, which is right
+      # for a real repo and wrong for this one until the first lesson lands. The
+      # guard covers ONLY the genuinely empty case: once any .abap exists, abaplint
+      # runs, and a glob that then matches nothing is still the hard failure it
+      # should be.
+      - id: examples
+        run: echo "count=$(find . -name '*.abap' -not -path './node_modules/*' | wc -l | tr -d ' ')" >> "$GITHUB_OUTPUT"
+      - if: steps.examples.outputs.count == '0'
+        run: echo "No .abap examples yet — abaplint runs from the first one onward."
       # Pinned to the major: a new minor tightening a rule should not turn every
       # unrelated push red, and a bump is then a deliberate commit.
-      - run: npx --yes @abaplint/cli@2
+      - if: steps.examples.outputs.count != '0'
+        run: npx --yes @abaplint/cli@2
