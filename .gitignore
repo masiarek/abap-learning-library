@@ -1,0 +1,13 @@
+# MkDocs build output — generated, never committed.
+site/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node, if abaplint is ever installed locally rather than run through npx.
+node_modules/
+
+# macOS
+.DS_Store

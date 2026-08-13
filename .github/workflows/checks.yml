@@ -1,0 +1,43 @@
+# What can be machine-checked about an ABAP teaching repo, checked on every push.
+#
+# No runner has an SAP system, so CI cannot RUN an example and compare its output
+# — that is why every answer key carries a provenance line naming the system a
+# human ran it on. What CI can do, it does:
+#
+#   1. abaplint parses and syntax-checks every example against a fixed release.
+#   2. check_examples.py proves every example has a recorded transcript, that the
+#      transcript says where it came from, and that every generated block on every
+#      page still matches it.
+#
+# Together they catch the two failures that actually happen: an example that no
+# longer compiles, and a page that quietly stopped agreeing with its program.
+
+name: checks
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pages-match-their-programs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/check_examples.py --check
+
+  abaplint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # abaplint's CLI requires Node 22 or newer.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      # Pinned to the major: a new minor tightening a rule should not turn every
+      # unrelated push red, and a bump is then a deliberate commit.
+      - run: npx --yes @abaplint/cli@2
