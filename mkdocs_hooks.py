@@ -67,6 +67,10 @@ NAV_ORDER: dict[str, list[str]] = {
     ],
     "01_Foundations": [
         "README.md",
+        "how_long_is_a_string",
+    ],
+    "01_Foundations": [
+        "README.md",
     ],
 }
 
