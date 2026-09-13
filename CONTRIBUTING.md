@@ -76,7 +76,7 @@ Write down anything release-dependent in the prose too. A transcript from 7.58 i
 
 ## Reading order in the sidebar
 
-Set it in `NAV_ORDER` in [`mkdocs_hooks.py`](https://github.com/masiarek/abap-learning-library/blob/master/mkdocs_hooks.py) — **never by renaming files to `01_`, `02_`…** on a page. A filename is a permanent URL; inserting one lesson would otherwise move every page after it. Numeric prefixes on *section folders* are fine (the hook strips them from the label) because folders move rarely and deliberately. The same file holds `FIXUPS`, which is where an acronym goes when the title-caser renders it "Alv" — add the word rather than renaming the folder.
+Set it in `NAV_ORDER` in [`mkdocs_hooks.py`](https://github.com/masiarek/abap-learning-library/blob/master/mkdocs_hooks.py) — **never by renaming files to `01_`, `02_`…** on a page. A filename is a permanent URL; inserting one lesson would otherwise move every page after it. Numeric prefixes on *section folders* are fine because folders move rarely and deliberately. A section's sidebar label is its README's `# H1` with the backticks dropped, so spell an acronym there ("ALV grid"); `FIXUPS` in the same file only fixes the fallback label a folder gets when it has no H1 — add the word there rather than renaming the folder.
 
 ## Before you commit
 
