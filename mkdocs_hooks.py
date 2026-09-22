@@ -72,11 +72,44 @@ NAV_ORDER: dict[str, list[str]] = {
     "": [
         "index.md",
         "01_Foundations",
+        "02_Keywords",
+        "03_Topics",
         "GLOSSARY.md",
     ],
     "01_Foundations": [
         "README.md",
         "how_long_is_a_string",
+    ],
+    # Grouped the way 02_Keywords/README.md groups them: declaring, building
+    # values, choosing, tables, the database, text, errors, objects, screens.
+    # Alphabetical would put ASSERT before DATA, which is a reference order and
+    # not a reading one.
+    "02_Keywords": [
+        "README.md",
+        "data", "types", "field_symbols", "enum",
+        "value", "for", "reduce", "filter", "corresponding", "let",
+        "new", "cast_conv", "string_templates",
+        "case_if", "cond_switch", "do_while", "check_continue_exit",
+        "loop_at", "read_table", "itab_changes", "sort", "describe_lines",
+        "select", "commit_work", "authority_check",
+        "concatenate_split", "find_replace", "open_dataset",
+        "try_catch", "message", "assert",
+        "class", "interfaces", "methods", "call_function", "perform_form",
+        "parameters_select_options", "write",
+    ],
+    "03_Topics": [
+        "README.md",
+        "internal_tables", "open_sql", "strings_and_text", "dates_and_times",
+        "numbers_and_currency", "oo_abap", "exceptions", "abap_unit",
+        "releases_and_syntax_levels",
+        "ddic_and_domains", "cds_views", "amdp_and_code_pushdown", "rap",
+        "selection_screens", "alv", "modularization",
+        "enhancements_and_badis", "bapis_and_rfc", "idocs", "json_and_xml",
+        "file_handling",
+        "luw_and_locking", "authorizations", "performance", "debugging",
+        "atc_and_code_inspector", "clean_abap", "abap_cloud",
+        "dynamic_programming", "regular_expressions",
+        "background_jobs", "transports", "resources",
     ],
 }
 
@@ -141,13 +174,22 @@ def _order(items, folder: str) -> None:
 
 
 def _readme_h1(section) -> str:
-    """The `# H1` of a section's own README.md, backticks dropped ("" if none)."""
+    """The `# H1` of a section's own README.md, trimmed for a sidebar ("" if none).
+
+    Page titles here are written "<subject> — <what it teaches>", which reads
+    right at the top of the page and is far too long down the side of it. The
+    em dash is the seam, so the label is the subject: "`LOOP AT` — `INTO`
+    copies, `ASSIGNING` does not" becomes "LOOP AT". A title with no em dash
+    ("Which release am I writing for?") is already a label and is kept whole.
+    """
     for child in section.children:
         if child.is_page and child.file.src_path.rsplit("/", 1)[-1] == "README.md":
             with open(child.file.abs_src_path, encoding="utf-8") as fh:
                 for line in fh:
                     if line.startswith("# "):
-                        return line[2:].strip().replace("`", "")
+                        title = line[2:].strip().replace("`", "")
+                        subject = title.split(" — ", 1)[0].strip()
+                        return subject or title
     return ""
 
 

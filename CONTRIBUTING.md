@@ -11,11 +11,31 @@ NN_Section/
     examples/
       z_topic_name.prog.abap     a program that demonstrates it
       z_topic_name.out           its recorded output (the answer key)
+    snippets/
+      z_topic_name.prog.abap     a program NOBODY HAS RUN -- no .out, ever
 ```
 
 A folder's overview page is named exactly `README.md`. GitHub only auto-renders a file with that name in a folder's tree view, and MkDocs turns it into that section's landing page — so the descriptive title goes in the page's `# H1`, not the filename.
 
 **Name example files the abapGit way**: `<name>.<objecttype>.abap` — `z_hello_list.prog.abap`, `zcl_ballot.clas.abap`, `zif_tabulator.intf.abap`. abaplint types an object from that infix and analyses **nothing** without it; its way of telling you is the words `0 file(s) analyzed`, which look exactly like success. `tools/check_examples.py` refuses a plainly-named file for that reason. The answer key drops the type: `z_hello_list.out`.
+
+## `examples/` or `snippets/` — the promise you are making
+
+The two folders exist because this library has two honest positions, and blurring them is the one failure it cannot ship.
+
+| | `examples/` | `snippets/` |
+|---|---|---|
+| Has been **run** | yes, by a human, in a named system | **no** |
+| Has a `.out` | yes, mandatory | **never** — a transcript there is an error |
+| Page may state results | yes, from the transcript | no |
+| Block on the page | an `output:` block, a `source:` block | a `snippet:` block |
+| Checked by abaplint | yes | yes |
+
+Both folders are in [`abaplint.json`](https://github.com/masiarek/abap-learning-library/blob/master/abaplint.json)'s glob, so a snippet is parsed and syntax-checked exactly as an example is. What a snippet does **not** get is a claim about behaviour, and `check_examples.py` enforces that in both directions: a `.out` found in `snippets/` fails, and so does an `output:` block naming a snippet.
+
+Know where that gate stops. abaplint has no copy of SAP's class library, so it catches an undefined variable, a malformed statement and an addition a statement does not take — and it cannot catch a misspelled method on `cl_abap_typedescr`, nor can it resolve a class that inherits from `cx_static_check`. When a page needs code that abaplint cannot type, put it in the prose as a fenced block and say that it is shown rather than checked. Fenced ABAP in the prose is illustration; only a `snippets/` or `examples/` file is machine-checked.
+
+Write a new page's program into `snippets/` unless you have actually run it. Moving it to `examples/` later, with its transcript, is a promotion — and it is the only way a page earns an output block.
 
 ## The one rule
 
@@ -53,7 +73,7 @@ Write down anything release-dependent in the prose too. A transcript from 7.58 i
 
 ## Two things that are checked, and one that is not
 
-- **abaplint** parses every example and syntax-checks it against the release in [`abaplint.json`](https://github.com/masiarek/abap-learning-library/blob/master/abaplint.json). Run it with `npx @abaplint/cli`. It catches a typo'd statement, an unknown variable, an obsolete construct — real errors, before a reader copies them.
+- **abaplint** parses every example and syntax-checks it against the release in [`abaplint.json`](https://github.com/masiarek/abap-learning-library/blob/master/abaplint.json). Run it with `npx @abaplint/cli`. The config excludes `site/`, because MkDocs copies every `.abap` file into the built site and a stale copy there would otherwise be linted twice. It catches a typo'd statement, an unknown variable, an obsolete construct — real errors, before a reader copies them.
 - **`check_examples.py --check`** proves the pages, the programs, and the recorded transcripts still agree.
 - **Nobody checks that the transcript is real.** That is your signature. Do not paste output you did not see a system produce, and if you are illustrating something you cannot run, write it as prose or a labelled sketch — never as a recorded output block.
 
@@ -76,7 +96,7 @@ Write down anything release-dependent in the prose too. A transcript from 7.58 i
 
 ## Reading order in the sidebar
 
-Set it in `NAV_ORDER` in [`mkdocs_hooks.py`](https://github.com/masiarek/abap-learning-library/blob/master/mkdocs_hooks.py) — **never by renaming files to `01_`, `02_`…** on a page. A filename is a permanent URL; inserting one lesson would otherwise move every page after it. Numeric prefixes on *section folders* are fine because folders move rarely and deliberately. A section's sidebar label is its README's `# H1` with the backticks dropped, so spell an acronym there ("ALV grid"); `FIXUPS` in the same file only fixes the fallback label a folder gets when it has no H1 — add the word there rather than renaming the folder.
+Set it in `NAV_ORDER` in [`mkdocs_hooks.py`](https://github.com/masiarek/abap-learning-library/blob/master/mkdocs_hooks.py) — **never by renaming files to `01_`, `02_`…** on a page. A filename is a permanent URL; inserting one lesson would otherwise move every page after it. Numeric prefixes on *section folders* are fine because folders move rarely and deliberately. A section's sidebar label is its README's `# H1` with the backticks dropped and everything from the em dash onwards trimmed off, so spell an acronym there ("ALV grid") and write the title as **`SUBJECT` — what it teaches**: "`LOOP AT` — `INTO` copies, `ASSIGNING` does not" labels the sidebar "LOOP AT" and still reads as a sentence at the top of the page. A title with no em dash is used whole. `FIXUPS` in the same file only fixes the fallback label a folder gets when it has no H1 — add the word there rather than renaming the folder.
 
 ## Before you commit
 

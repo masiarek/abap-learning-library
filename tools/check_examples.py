@@ -20,6 +20,19 @@ Inside the markers is generated, outside is yours. `source:` blocks work the sam
 way and paste the program itself, so a lesson cannot drift from the file its
 numbers came from.
 
+Two folders, two different promises
+-----------------------------------
+    examples/   a program a human RAN. Has a <stem>.out beside it. `output:` and
+                `source:` blocks come from here, and the page may state results.
+    snippets/   a program nobody has run. Has NO .out, and never may. `snippet:`
+                blocks come from here; abaplint still parses and syntax-checks it,
+                so the page may state that the code is valid ABAP -- and nothing
+                more. A keyword page that demonstrates a construct without an SAP
+                system to run it in belongs here; the caption says so in words.
+
+The split exists so the library can grow past what one person has had time to run
+without ever blurring the line between "this compiles" and "this printed".
+
 Because the machine cannot vouch for the run, **the answer key must say where it
 came from**. Every `.out` starts with a provenance line:
 
@@ -60,7 +73,7 @@ PROVENANCE = re.compile(r"^#!recorded:\s*(?P<where>.+?)\s*$")
 # <!-- output:stem -->  ...generated...  <!-- /output -->
 # <!-- source:stem -->  ...generated...  <!-- /source -->
 BLOCK = re.compile(
-    r"(?P<open><!--\s*(?P<kind>output|source):(?P<stem>[A-Za-z0-9_\-]+)\s*-->)"
+    r"(?P<open><!--\s*(?P<kind>output|source|snippet):(?P<stem>[A-Za-z0-9_\-]+)\s*-->)"
     r"(?P<body>.*?)"
     r"(?P<close><!--\s*/(?P=kind)\s*-->)",
     re.DOTALL,
@@ -104,8 +117,8 @@ def stem_of(path: Path) -> str:
     return path.name.split(".", 1)[0]
 
 
-def find_examples() -> dict[str, Path]:
-    """Map stem -> path for every .abap under an examples/ folder.
+def find_abap(folder: str) -> dict[str, Path]:
+    """Map stem -> path for every .abap under a folder with this name.
 
     Filenames follow **abapGit**: `<name>.<objecttype>.abap`, as in
     `z_hello_list.prog.abap` or `zcl_ballot.clas.abap`. That is not decoration —
@@ -115,7 +128,7 @@ def find_examples() -> dict[str, Path]:
     """
     found: dict[str, Path] = {}
     for path in sorted(walk(REPO)):
-        if path.suffix != ".abap" or path.parent.name != "examples":
+        if path.suffix != ".abap" or path.parent.name != folder:
             continue
         if len(path.suffixes) < 2:
             sys.exit(
@@ -163,6 +176,16 @@ def read_key(src: Path) -> tuple[str, str]:
 def rendered_block(kind: str, src: Path, where: str, transcript: str, page: Path) -> str:
     """The generated body that goes between the markers on `page`."""
     href = os.path.relpath(src, page.parent)
+    if kind == "snippet":
+        body = src.read_text(encoding="utf-8").strip("\n")
+        return (
+            f"\n*[`{src.name}`]({href}) — pasted here by `tools/check_examples.py`. "
+            "**Syntax-checked, never run:** abaplint parses and type-checks it "
+            "against the release in "
+            "[`abaplint.json`](https://github.com/masiarek/abap-learning-library/blob/master/abaplint.json)"
+            ", but no system has produced output for it, so this page shows none.*\n\n"
+            f"```abap\n{body}\n```\n"
+        )
     if kind == "source":
         body = src.read_text(encoding="utf-8").strip("\n")
         return (
@@ -195,7 +218,7 @@ def fill_pages(
         if page.suffix != ".md":
             continue
         text = page.read_text(encoding="utf-8")
-        if "<!-- output:" not in text and "<!-- source:" not in text:
+        if not any(f"<!-- {kind}:" in text for kind in ("output", "source", "snippet")):
             continue
         skip = fenced_spans(text)
 
@@ -205,13 +228,30 @@ def fill_pages(
             stem, kind = m.group("stem"), m.group("kind")
             if only is not None and stem not in only:
                 return m.group(0)
-            if stem not in sources or stem not in keys:
+            if stem not in sources:
                 problems.append(
-                    f"{page.relative_to(REPO)}: asks for {kind} block {stem!r}, but "
-                    "no examples/*.abap with a readable answer key has that stem"
+                    f"{page.relative_to(REPO)}: asks for {kind} block {stem!r}, but no "
+                    "examples/*.abap or snippets/*.abap has that stem"
                 )
                 return m.group(0)
-            where, transcript = keys[stem]
+            is_snippet = sources[stem].parent.name == "snippets"
+            if is_snippet != (kind == "snippet"):
+                # The two folders carry different promises; a block must name the
+                # one its program actually lives in, or the caption would lie.
+                problems.append(
+                    f"{page.relative_to(REPO)}: {kind} block {stem!r} points at "
+                    f"{sources[stem].relative_to(REPO)}. A snippets/ program was "
+                    "never run, so it can only fill a `snippet:` block; an "
+                    "examples/ program has a transcript and cannot fill one."
+                )
+                return m.group(0)
+            if kind != "snippet" and stem not in keys:
+                problems.append(
+                    f"{page.relative_to(REPO)}: asks for {kind} block {stem!r}, but "
+                    "that example has no readable answer key"
+                )
+                return m.group(0)
+            where, transcript = keys.get(stem, ("", ""))
             return (
                 m.group("open")
                 + rendered_block(kind, sources[stem], where, transcript, page)
@@ -233,6 +273,23 @@ def orphan_keys(examples: dict[str, Path]) -> list[str]:
         str(p.relative_to(REPO))
         for p in sorted(walk(REPO))
         if p.suffix == ".out" and p.parent.name == "examples" and p not in kept
+    ]
+
+
+def keyed_snippets(snippets: dict[str, Path]) -> list[str]:
+    """A transcript inside snippets/ — the one thing that folder must never hold.
+
+    `snippets/` means "nobody ran this". A `.out` there is either a real run
+    filed in the wrong folder (move the pair to examples/ and the page gains an
+    output block) or a transcript with no run behind it, which is the single
+    failure this library exists to make impossible.
+    """
+    return [
+        f"{src.parent.relative_to(REPO)}/{stem}.out: a transcript in snippets/. "
+        "snippets/ is for programs nobody has run; move the program and its key "
+        "to examples/ instead."
+        for stem, src in sorted(snippets.items())
+        if (src.parent / f"{stem}.out").exists()
     ]
 
 
@@ -270,15 +327,24 @@ def main() -> int:
     )
     args = ap.parse_args()
 
-    examples = find_examples()
-    if not examples:
-        print("No examples found (looked for *.abap under any examples/ folder).")
+    examples = find_abap("examples")
+    snippets = find_abap("snippets")
+    clash = sorted(set(examples) & set(snippets))
+    if clash:
+        sys.exit(
+            "ERROR: same stem in both examples/ and snippets/: "
+            + ", ".join(clash)
+            + "\nA Markdown block names a bare stem, so one stem is one program."
+        )
+    sources = {**examples, **snippets}
+    if not sources:
+        print("No programs found (looked for *.abap under examples/ or snippets/).")
         return 0
 
-    selected = resolve_selection(args.only, examples) if args.only else None
+    selected = resolve_selection(args.only, sources) if args.only else None
 
     keys: dict[str, tuple[str, str]] = {}
-    failures: list[str] = orphan_keys(examples)
+    failures: list[str] = orphan_keys(examples) + keyed_snippets(snippets)
 
     for stem, src in examples.items():
         if selected is not None and stem not in selected:
@@ -290,7 +356,12 @@ def main() -> int:
             continue
         print(f"  ok        {src.relative_to(REPO)}  ({keys[stem][0]})")
 
-    drift = fill_pages(keys, examples, write=not args.check, problems=failures, only=selected)
+    for stem, src in snippets.items():
+        if selected is not None and stem not in selected:
+            continue
+        print(f"  unrun     {src.relative_to(REPO)}  (syntax-checked only)")
+
+    drift = fill_pages(keys, sources, write=not args.check, problems=failures, only=selected)
 
     if args.check and drift:
         failures.append(
@@ -309,12 +380,15 @@ def main() -> int:
 
     if selected is not None:
         print(
-            f"\n{len(selected)} of {len(examples)} example(s) checked. --only was in "
+            f"\n{len(selected)} of {len(sources)} program(s) checked. --only was in "
             "effect; everything else was left untouched. Do a full run before committing."
         )
         return 0
 
-    print(f"\n{len(examples)} example(s) match their recorded output.")
+    print(
+        f"\n{len(examples)} example(s) match their recorded output; "
+        f"{len(snippets)} snippet(s) carry no output claim."
+    )
     return 0
 
 

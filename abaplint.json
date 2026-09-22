@@ -1,6 +1,9 @@
 {
   "global": {
-    "files": "/**/examples/*.abap"
+    "files": "/**/{examples,snippets}/*.abap",
+    "exclude": [
+      "/site/"
+    ]
   },
   "syntax": {
     "version": {

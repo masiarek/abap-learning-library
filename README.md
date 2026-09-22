@@ -31,7 +31,8 @@ The tool strips that line out of the code fence and prints it as the caption abo
 | Check | Tool |
 |---|---|
 | Every example parses and passes a syntax check against a configured release (7.58) | [abaplint](https://abaplint.org) |
-| Every example has a recorded transcript, and that transcript says where it was run | `tools/check_examples.py` |
+| Every `examples/` program has a recorded transcript, and that transcript says where it was run | `tools/check_examples.py` |
+| No `snippets/` program has a transcript, and no page claims output for one | `tools/check_examples.py` |
 | Every generated block on every page still matches the transcript beside the program | `tools/check_examples.py --check` |
 
 **What CI cannot enforce** is that the transcript is what your system really printed. That part is a human signature, and the provenance line is where it is signed.
@@ -45,8 +46,15 @@ The tool strips that line out of the code fence and prints it as the caption abo
     examples/
       z_topic.prog.abap            the program the lesson is about
       z_topic.out                  its recorded output — the answer key
+02_Keywords/  03_Topics/
+  <topic>/
+    README.md                      the page
+    snippets/
+      z_kw_topic.prog.abap         a program that was syntax-checked but NEVER run
 tools/check_examples.py            checks the keys and refills the pages
 ```
+
+**Two folders, two different promises.** A program in `examples/` was **run** by a human and has a transcript beside it, so its page may state results. A program in `snippets/` has only been **parsed and syntax-checked** by abaplint — it has no `.out`, may never have one, and its page shows code and no output. The checker enforces the split in both directions: a transcript found inside `snippets/` is an error, and an `output:` block pointing at a snippet is an error too. That is how the shelf can grow past what one person has had time to run without ever blurring the line between *this compiles* and *this printed*.
 
 A lesson marks the spot where output belongs and lets the tool fill it:
 
@@ -77,7 +85,13 @@ Only Python 3.11+ is needed to check the pages; `npx` for abaplint, and `uv` onl
 
 ## Start here
 
-The lessons land in [`01_Foundations/`](01_Foundations/README.md) as they are written. Nothing is there yet — this is the scaffolding, put up first so the first lesson has a shape to land in.
+Three shelves, three different cuts through the same language:
+
+- **[Foundations](01_Foundations/README.md)** — one idea per page, with a program beside it. This is where a lesson lands once someone has *run* it.
+- **[Keywords](02_Keywords/README.md)** — one page per keyword: what it does, the trap it comes with, which release it needs, and what to write instead when the answer is "something newer". Most pages carry a syntax-checked program.
+- **[Topics](03_Topics/README.md)** — one page per idea: internal tables, Open SQL, exceptions, ABAP Unit, RAP, performance, and the rest of what has to be understood rather than looked up.
+
+The [glossary](GLOSSARY.md) is the short way in: every entry points at the page that earns it.
 
 ## Adding a lesson
 
