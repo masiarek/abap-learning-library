@@ -31,3 +31,7 @@ Lock objects are generated from `SE11`, and the lock modes (`E` exclusive, `S` s
 - [`CALL FUNCTION`](../../02_Keywords/call_function/README.md) — `IN BACKGROUND TASK`
 - [BAPIs and RFC](../bapis_and_rfc/README.md) — `BAPI_TRANSACTION_COMMIT`, and why it exists
 - [RAP](../rap/README.md) — where the framework owns the transaction instead
+- [Database writes](../../02_Keywords/db_writes/README.md) — `INSERT`, `UPDATE`, `MODIFY`, `DELETE` on a table, and `sy-dbcnt`
+- [Asking what time it is](../../02_Keywords/get_time/README.md) — `GET TIME`, `GET RUN TIME`, and the `WAIT` that commits
+- [Number ranges](../number_ranges/README.md) — the next document number, and the gaps
+- [How ABAP runs](../how_abap_runs/README.md) — work processes and dialog steps

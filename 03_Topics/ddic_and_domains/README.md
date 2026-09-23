@@ -37,3 +37,7 @@ A local `TYPES` declaration has none of that. This is why a field on a selection
 - [CDS views](../cds_views/README.md) — the modern layer above the tables
 - [Numbers and currency](../numbers_and_currency/README.md) — `CURR`, `QUAN` and their reference fields
 - [Transports](../transports/README.md) — how a Dictionary change travels
+- [Conversion routines](../conversion_routines/README.md) — `ALPHA`, and the `SELECT` that finds nothing
+- [Table types and buffering](../table_types_and_buffering/README.md) — technical settings, and the buffer that goes stale
+- [Table maintenance](../table_maintenance/README.md) — `SM30` and the generator
+- [Text elements and translation](../text_elements_and_translation/README.md) — nothing a user reads belongs in a literal

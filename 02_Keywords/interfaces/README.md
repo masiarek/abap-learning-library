@@ -47,3 +47,5 @@ Interfaces can also hold `CONSTANTS`, `TYPES` and `DATA`, and can extend other i
 - [`METHODS` and parameters](../methods/README.md) — what the contract's methods look like
 - [ABAP Unit](../../03_Topics/abap_unit/README.md) — the test double an interface makes possible
 - [Object-oriented ABAP](../../03_Topics/oo_abap/README.md) — the design argument
+- [The class additions](../friends_aliases_abstract/README.md) — `FRIENDS`, `ALIASES`, `ABSTRACT`, `FINAL`
+- [Events](../events/README.md) — `EVENTS`, `RAISE EVENT`, `SET HANDLER`

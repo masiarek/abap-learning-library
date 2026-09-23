@@ -34,3 +34,5 @@ The mental shift is the transaction. In a classic program you decide when to [`C
 - [LUW and locking](../luw_and_locking/README.md) — the transaction model RAP takes over
 - [ABAP Cloud](../abap_cloud/README.md) — the environment RAP assumes
 - [Object-oriented ABAP](../oo_abap/README.md) — the behaviour implementation is a class like any other
+- [OData, Gateway and Fiori](../odata_and_fiori/README.md) — how ABAP reaches a browser
+- [BOPF](../bopf/README.md) — the framework before RAP

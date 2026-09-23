@@ -33,3 +33,4 @@ SPLIT lv_line AT `,` INTO lv_first lv_second.
 - [String templates](../string_templates/README.md) — the usual replacement for `CONCATENATE`
 - [Strings and text](../../03_Topics/strings_and_text/README.md) — the whole function library, and `string` versus `c`
 - [`FIND` and `REPLACE`](../find_replace/README.md) — searching rather than cutting
+- [In-place string statements](../condense_translate_shift/README.md) — `CONDENSE`, `TRANSLATE`, `SHIFT` and their function twins

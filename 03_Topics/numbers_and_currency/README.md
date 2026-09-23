@@ -40,3 +40,6 @@ A currency amount also needs its currency key beside it in any table that stores
 - [Open SQL](../open_sql/README.md) — amounts coming back in database format
 - [DDIC, domains and data elements](../ddic_and_domains/README.md) — where `CURR`, `QUAN` and their reference fields are declared
 - The [math learning library](https://masiarek.github.io/math-learning-library/) — floating point in general, with programs that were run
+- [Numeric functions and operators](../../02_Keywords/numeric_functions/README.md) — `round( )` modes, `DIV`, `MOD`
+- [Types at a glance](../types_at_a_glance/README.md) — every elementary type, with a program
+- [Conversion and comparison rules](../conversion_and_comparison_rules/README.md) — what happens between two types

@@ -37,3 +37,6 @@ Can this unit be called by a test, with data the test constructs? A method on a 
 - [`CLASS`](../../02_Keywords/class/README.md) — the one to write
 - [ABAP Unit](../abap_unit/README.md) — the test that decides
 - [Transports](../transports/README.md) — packages, and what travels together
+- [Program types](../program_types/README.md) — executable, module pool, function group, class pool
+- [Packages and namespaces](../packages_and_namespaces/README.md) — where an object lives, and who may use it
+- [`STATICS`](../../02_Keywords/statics/README.md) — a local variable that survives between calls

@@ -93,3 +93,6 @@ START-OF-SELECTION.
 - [BAPIs and RFC](../../03_Topics/bapis_and_rfc/README.md) — `BAPIRET2`, and why it looks like `sy-msg…`
 - [Background jobs](../../03_Topics/background_jobs/README.md) — what happens to each message type when nobody is watching
 - [`ASSERT`](../assert/README.md) — for a condition that is a bug rather than a message
+- [System fields](../sy_fields/README.md) — `sy-subrc`, `sy-tabix`, `sy-index` and the rest
+- [Application log](../../03_Topics/application_log/README.md) — messages that outlive the run
+- [Text elements and translation](../../03_Topics/text_elements_and_translation/README.md) — nothing a user reads belongs in a literal

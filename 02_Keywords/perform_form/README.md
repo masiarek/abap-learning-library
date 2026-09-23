@@ -40,3 +40,6 @@ Still: `PERFORM` is how classic user exits, many SAPscript routines and countles
 - [`METHODS` and parameters](../methods/README.md) — the replacement, with typed directions
 - [`CALL FUNCTION`](../call_function/README.md) — the other classic modularization unit
 - [ABAP Cloud](../../03_Topics/abap_cloud/README.md) — where `FORM` no longer compiles
+- [Obsolete declarations](../obsolete_declarations/README.md) — `TABLES`, `OCCURS`, header lines, `RANGES`
+- [Obsolete statements](../move_add_compute/README.md) — `MOVE`, `ADD`, `COMPUTE` — recognise, do not write
+- [Macros](../define_macro/README.md) — `DEFINE`, and why not

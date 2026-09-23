@@ -105,3 +105,4 @@ ENDLOOP.
 - [`FILTER`](../filter/README.md) — the shorter form, when the table has the key for it
 - [`LOOP AT`](../loop_at/README.md) — the statement, and when it is still the right choice
 - [Performance](../../03_Topics/performance/README.md) — what a nested `FOR` costs
+- [Constructor expressions](../../03_Topics/constructor_expressions/README.md) — the `VALUE`/`NEW`/`COND` family as a family

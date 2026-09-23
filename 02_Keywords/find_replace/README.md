@@ -33,3 +33,4 @@ Since 7.55 `PCRE` is the addition to use: it is the flavour the rest of the worl
 - [Regular expressions](../../03_Topics/regular_expressions/README.md) — the topic page, with a program
 - [Strings and text](../../03_Topics/strings_and_text/README.md) — the non-regex string functions
 - [`CONCATENATE` and `SPLIT`](../concatenate_split/README.md) — cutting text apart without a pattern
+- [In-place string statements](../condense_translate_shift/README.md) — `CONDENSE`, `TRANSLATE`, `SHIFT` and their function twins

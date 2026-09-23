@@ -85,3 +85,4 @@ WRITE: / 'rows left', lines( lt_rows ).
 - [Internal tables](../../03_Topics/internal_tables/README.md) — sorted and hashed tables, which need neither statement
 - [`LOOP AT`](../loop_at/README.md) — `GROUP BY`, which groups by value and needs no prior sort
 - [Performance](../../03_Topics/performance/README.md) — when sorting is the cheap part
+- [Control breaks](../at_new/README.md) — `AT NEW`, `AT END OF`, `SUM` — the older way to total per group

@@ -34,3 +34,6 @@ The checks abaplint runs here are the same *kind* of check, run on a laptop and 
 - [ABAP Cloud](../abap_cloud/README.md) — the strictest check variant of all
 - [Performance](../performance/README.md) — most ATC performance findings in one place
 - [Transports](../transports/README.md) — where the check gate actually sits
+- [Documentation and pragmas](../documentation_and_pragmas/README.md) — `"!`, `##NO_TEXT`, `"#EC`
+- [Security](../security/README.md) — injection in dynamic SQL, code and file paths
+- [S/4HANA custom code migration](../s4hana_custom_code/README.md) — what breaks, and how to find it first

@@ -41,3 +41,6 @@ The column metadata — headings, widths, currency handling — comes from the [
 - [Selection screens](../selection_screens/README.md) — what comes before the grid
 - [Internal tables](../internal_tables/README.md) — what ALV is displaying
 - [DDIC, domains and data elements](../ddic_and_domains/README.md) — where the column headings come from
+- [Classic reports](../classic_reports/README.md) — lists, pages, `HIDE` and `AT LINE-SELECTION`
+- [Events](../../02_Keywords/events/README.md) — `EVENTS`, `RAISE EVENT`, `SET HANDLER`
+- [Dynpro screens](../dynpro_screens/README.md) — the classic GUI model

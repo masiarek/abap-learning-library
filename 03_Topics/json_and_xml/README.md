@@ -36,3 +36,6 @@
 - [Dates and times](../dates_and_times/README.md) — the conversion at the boundary
 - [BAPIs and RFC](../bapis_and_rfc/README.md) — the other integration shape
 - [File handling](../file_handling/README.md) — writing the result somewhere
+- [`CALL TRANSFORMATION`](../../02_Keywords/call_transformation/README.md) — ABAP to XML and JSON
+- [HTTP client](../http_client/README.md) — calling a REST API
+- [OData, Gateway and Fiori](../odata_and_fiori/README.md) — how ABAP reaches a browser

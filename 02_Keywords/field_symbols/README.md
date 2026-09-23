@@ -117,3 +117,4 @@ ENDIF.
 - [Dynamic programming](../../03_Topics/dynamic_programming/README.md) — where the untyped form belongs, and what it costs
 - [`DATA` — and `DATA( )`](../data/README.md) — the ordinary way to get a variable
 - [`READ TABLE` and table expressions](../read_table/README.md) — `ASSIGNING` for a single row
+- [Data references](../data_references/README.md) — `REF`, `REF TO data`, `->*`

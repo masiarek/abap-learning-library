@@ -106,3 +106,4 @@ WRITE: / 'csv ', lv_csv.
 - [`VALUE`](../value/README.md) — the same family, building a table instead of a value
 - [`COND` and `SWITCH`](../cond_switch/README.md) — what usually sits inside a `NEXT`
 - [`LOOP AT`](../loop_at/README.md) — the statement form, and `GROUP BY` for folding per group
+- [`COLLECT`](../collect/README.md) — totals by key without a loop

@@ -35,3 +35,6 @@ When a user says "no authorization", `SU53` shows the last failed check, which i
 - [Open SQL](../open_sql/README.md) — which checks nothing
 - [CDS views](../cds_views/README.md) — declaring the check with the model
 - [ATC and Code Inspector](../atc_and_code_inspector/README.md) — the security checks that look for a missing one
+- [Security](../security/README.md) — injection in dynamic SQL, code and file paths
+- [`CALL TRANSACTION`](../../02_Keywords/call_transaction/README.md) — running a transaction from code
+- [Table maintenance](../table_maintenance/README.md) — `SM30` and the generator

@@ -42,3 +42,5 @@ Assertions in production code are a statement of confidence, not of paranoia —
 - [`MESSAGE`](../message/README.md) — for failures a user caused
 - [ABAP Unit](../../03_Topics/abap_unit/README.md) — assertions in tests, where they are the whole mechanism
 - [`CHECK`, `CONTINUE`, `EXIT`, `RETURN`](../check_continue_exit/README.md) — the statements `ASSERT` is often confused with
+- [Checkpoint groups](../break_point_log_point/README.md) — `BREAK-POINT ID`, `LOG-POINT`, `ASSERT ID`
+- [`RAISE SHORTDUMP`](../raise_shortdump/README.md) — a dump on purpose, carrying the facts

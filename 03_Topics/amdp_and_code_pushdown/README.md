@@ -49,3 +49,5 @@ Going straight to step 3 buys a HANA-only implementation, code that the ATC chec
 - [CDS views](../cds_views/README.md) — step two
 - [Performance](../performance/README.md) — measure before climbing
 - [ABAP Cloud](../abap_cloud/README.md) — what is allowed in the restricted model
+- [Native SQL](../native_sql/README.md) — when Open SQL is not enough, and what it costs
+- [HANA specifics](../hana_specifics/README.md) — what changes on a column store

@@ -63,3 +63,6 @@ Everything on this shelf is easier with a system to type into. The usual routes 
 - [Topics](../README.md) — the same material by idea
 - [Clean ABAP](../clean_abap/README.md) — the style guide, summarised
 - [Which release am I writing for?](../releases_and_syntax_levels/README.md) — the question to ask of every source above
+- [ADT and SE80](../tooling_adt_and_se80/README.md) — the two workbenches
+- [abapGit](../abapgit/README.md) — Git for ABAP
+- [Standard classes worth knowing](../standard_classes/README.md) — the `CL_ABAP_*` shelf

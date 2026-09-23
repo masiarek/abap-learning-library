@@ -114,3 +114,5 @@ ENDLOOP.
 - [`FIELD-SYMBOLS` and `ASSIGN`](../field_symbols/README.md) — what `ASSIGNING` is actually doing
 - [`FOR`](../for/README.md) — the same iteration as an expression
 - [Internal tables](../../03_Topics/internal_tables/README.md) — keys, kinds and what each lookup costs
+- [Control breaks](../at_new/README.md) — `AT NEW`, `AT END OF`, `SUM` — the older way to total per group
+- [`COLLECT`](../collect/README.md) — totals by key without a loop

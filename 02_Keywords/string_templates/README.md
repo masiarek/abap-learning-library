@@ -91,3 +91,5 @@ WRITE: / 'truncated:', lv_short.
 - [Strings and text](../../03_Topics/strings_and_text/README.md) — `string` versus `c`, and the function library
 - [How long is a string?](../../01_Foundations/how_long_is_a_string/README.md) — what a length means once the text is not ASCII
 - [`CAST`, `CONV` and `EXACT`](../cast_conv/README.md) — refusing a truncation instead of accepting it
+- [In-place string statements](../condense_translate_shift/README.md) — `CONDENSE`, `TRANSLATE`, `SHIFT` and their function twins
+- [Conversion routines](../../03_Topics/conversion_routines/README.md) — `ALPHA`, and the `SELECT` that finds nothing

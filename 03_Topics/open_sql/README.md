@@ -106,3 +106,9 @@ START-OF-SELECTION.
 - [Performance](../performance/README.md) — measuring, and the SQL trace
 - [Internal tables](../internal_tables/README.md) — where the rows land afterwards
 - [`AUTHORITY-CHECK`](../../02_Keywords/authority_check/README.md) — the check the database does not do
+- [Database writes](../../02_Keywords/db_writes/README.md) — `INSERT`, `UPDATE`, `MODIFY`, `DELETE` on a table, and `sy-dbcnt`
+- [`WITH`](../../02_Keywords/with_cte/README.md) — common table expressions in Open SQL (7.51)
+- [Cursors](../../02_Keywords/open_cursor_fetch/README.md) — `OPEN CURSOR`, `FETCH`, `SELECT … ENDSELECT` for sets too big to hold
+- [Native SQL](../native_sql/README.md) — when Open SQL is not enough, and what it costs
+- [HANA specifics](../hana_specifics/README.md) — what changes on a column store
+- [Initial values and null](../initial_values_and_null/README.md) — ABAP has no null

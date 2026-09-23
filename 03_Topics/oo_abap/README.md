@@ -46,3 +46,6 @@ Three lines of ceremony buy: local variables that are actually local, methods sm
 - [ABAP Unit](../abap_unit/README.md) — the payoff
 - [Modularization](../modularization/README.md) — what classes replaced, and what is still around
 - [Clean ABAP](../clean_abap/README.md) — SAP's own guidance, which assumes all of the above
+- [Events](../../02_Keywords/events/README.md) — `EVENTS`, `RAISE EVENT`, `SET HANDLER`
+- [The class additions](../../02_Keywords/friends_aliases_abstract/README.md) — `FRIENDS`, `ALIASES`, `ABSTRACT`, `FINAL`
+- [`CASE TYPE OF`](../../02_Keywords/case_type_of/README.md) — branching on an object's class, and when not to

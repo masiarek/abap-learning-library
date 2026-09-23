@@ -102,3 +102,6 @@ WRITE: / ls_invoice-id, ls_invoice-customer, ls_invoice-amount, gc_status-open.
 - [Enumerations](../enum/README.md) — the 7.51 replacement for a structured constant
 - [DDIC, domains and data elements](../../03_Topics/ddic_and_domains/README.md) — types that carry their own labels and checks
 - [`VALUE`](../value/README.md) — filling a structure of the type you just named
+- [Ranges tables](../ranges/README.md) — `TYPE RANGE OF`, and the empty table that means everything
+- [Meshes](../mesh/README.md) — tables with declared associations
+- [Types at a glance](../../03_Topics/types_at_a_glance/README.md) — every elementary type, with a program

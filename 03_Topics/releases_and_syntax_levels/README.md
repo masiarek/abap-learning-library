@@ -41,3 +41,5 @@ Write the answer down in the code you produce. A page in this library that says 
 - [Keywords](../../02_Keywords/README.md) — every page names the release its construct needs
 - [ATC and Code Inspector](../atc_and_code_inspector/README.md) — checking against a target release automatically
 - [Clean ABAP](../clean_abap/README.md) — which of the new constructs are worth adopting first
+- [Modern versus classic](../modern_vs_classic/README.md) — every old construct beside its replacement
+- [S/4HANA custom code migration](../s4hana_custom_code/README.md) — what breaks, and how to find it first

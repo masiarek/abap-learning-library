@@ -126,3 +126,7 @@ START-OF-SELECTION.
 - [`NEW`](../new/README.md) — creating the instance
 - [Object-oriented ABAP](../../03_Topics/oo_abap/README.md) — when a report should be a class at all
 - [ABAP Unit](../../03_Topics/abap_unit/README.md) — the local test class, and the design it pushes you towards
+- [Events](../events/README.md) — `EVENTS`, `RAISE EVENT`, `SET HANDLER`
+- [The class additions](../friends_aliases_abstract/README.md) — `FRIENDS`, `ALIASES`, `ABSTRACT`, `FINAL`
+- [`CASE TYPE OF`](../case_type_of/README.md) — branching on an object's class, and when not to
+- [`STATICS`](../statics/README.md) — a local variable that survives between calls

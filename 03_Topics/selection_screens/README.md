@@ -37,3 +37,6 @@ A user can save a set of selection values as a variant, and a background job usu
 - [`MESSAGE`](../../02_Keywords/message/README.md) — which type returns to the screen
 - [Background jobs](../background_jobs/README.md) — where the variant is the only input
 - [ALV](../alv/README.md) — what happens after `START-OF-SELECTION`
+- [Report events](../../02_Keywords/report_events/README.md) — the blocks a report is made of, in order
+- [Ranges tables](../../02_Keywords/ranges/README.md) — `TYPE RANGE OF`, and the empty table that means everything
+- [`SUBMIT`](../../02_Keywords/submit/README.md) — running another report

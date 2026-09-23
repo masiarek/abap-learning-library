@@ -37,3 +37,6 @@ Data that is wrong *already* is a database question, not a stepping question: `S
 - [Enhancements and BAdIs](../enhancements_and_badis/README.md) — finding the hook with a breakpoint
 - [`ASSERT`](../../02_Keywords/assert/README.md) — checkpoint groups, and assertions you can switch on
 - [Background jobs](../background_jobs/README.md) — debugging something you cannot start by hand
+- [Checkpoint groups](../../02_Keywords/break_point_log_point/README.md) — `BREAK-POINT ID`, `LOG-POINT`, `ASSERT ID`
+- [Short dumps](../short_dumps/README.md) — reading `ST22`
+- [ADT and SE80](../tooling_adt_and_se80/README.md) — the two workbenches

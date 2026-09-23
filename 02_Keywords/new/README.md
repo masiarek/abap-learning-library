@@ -87,3 +87,5 @@ START-OF-SELECTION.
 - [`CAST`, `CONV` and `EXACT`](../cast_conv/README.md) — what to do with the reference afterwards
 - [`VALUE`](../value/README.md) — the same family, for structures and tables
 - [Object-oriented ABAP](../../03_Topics/oo_abap/README.md) — when a program should be a class at all
+- [Data references](../data_references/README.md) — `REF`, `REF TO data`, `->*`
+- [Constructor expressions](../../03_Topics/constructor_expressions/README.md) — the `VALUE`/`NEW`/`COND` family as a family

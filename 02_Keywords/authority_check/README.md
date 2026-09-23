@@ -42,3 +42,5 @@ Where the check belongs is a design question: at the entry point of the service,
 - [`SELECT`](../select/README.md) — the statement that checks nothing
 - [CDS views](../../03_Topics/cds_views/README.md) — access control declared with the model
 - [ATC and Code Inspector](../../03_Topics/atc_and_code_inspector/README.md) — the checks that look for a missing check
+- [`CALL TRANSACTION`](../call_transaction/README.md) — running a transaction from code
+- [Security](../../03_Topics/security/README.md) — injection in dynamic SQL, code and file paths

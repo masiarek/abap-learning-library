@@ -43,3 +43,4 @@ By value or by reference matters too: `VALUE(…)` copies, the default for `IMPO
 - [`INTERFACE` and `INTERFACES`](../interfaces/README.md) — the same signatures, as a contract
 - [`CALL FUNCTION`](../call_function/README.md) — the function-module equivalents, and `TABLES`
 - [Clean ABAP](../../03_Topics/clean_abap/README.md) — the argument for few parameters and one return
+- [The class additions](../friends_aliases_abstract/README.md) — `FRIENDS`, `ALIASES`, `ABSTRACT`, `FINAL`

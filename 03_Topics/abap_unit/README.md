@@ -107,3 +107,5 @@ START-OF-SELECTION.
 - [Object-oriented ABAP](../oo_abap/README.md) — why testability and OO are one argument
 - [ATC and Code Inspector](../atc_and_code_inspector/README.md) — the other automated check on your transport
 - [Clean ABAP](../clean_abap/README.md) — the style guide that assumes tests exist
+- [Test doubles](../test_doubles/README.md) — replacing the database, the class, the function module
+- [The class additions](../../02_Keywords/friends_aliases_abstract/README.md) — `FRIENDS`, `ALIASES`, `ABSTRACT`, `FINAL`

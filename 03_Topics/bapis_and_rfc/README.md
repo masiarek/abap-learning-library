@@ -44,3 +44,6 @@ Two things bite: an RFC call **commits** the current LUW before it goes, and a f
 - [`COMMIT WORK`](../../02_Keywords/commit_work/README.md) — why a BAPI does not commit
 - [Exceptions](../exceptions/README.md) — turning `RETURN` into something a caller can handle
 - [IDocs](../idocs/README.md) — the asynchronous, document-shaped alternative
+- [Parallel processing](../parallel_processing/README.md) — `STARTING NEW TASK`, bgRFC, server groups
+- [Number ranges](../number_ranges/README.md) — the next document number, and the gaps
+- [Change documents](../change_documents/README.md) — who changed what, and what skips the record

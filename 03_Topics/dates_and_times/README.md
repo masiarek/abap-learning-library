@@ -87,3 +87,5 @@ ENDIF.
 - [Open SQL](../open_sql/README.md) — date ranges in a `WHERE`, and `SELECT-OPTIONS`
 - [Background jobs](../background_jobs/README.md) — where "today" is decided by the server, not the user
 - [`PARAMETERS` and `SELECT-OPTIONS`](../../02_Keywords/parameters_select_options/README.md) — date ranges on a selection screen
+- [Asking what time it is](../../02_Keywords/get_time/README.md) — `GET TIME`, `GET RUN TIME`, and the `WAIT` that commits
+- [Types at a glance](../types_at_a_glance/README.md) — every elementary type, with a program

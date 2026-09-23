@@ -6,6 +6,7 @@ Where an entry points at a page marked **stub**, the definition here is the whol
 
 ## A – C
 
+
 **ABAP Cloud** — the restricted development model in which only *released* APIs and tables may be used; rules out much of classic ABAP regardless of release. → [ABAP Cloud](03_Topics/abap_cloud/README.md)
 
 **ABAP Unit** — the xUnit framework built into the language; a local class marked `FOR TESTING`, invisible in production. → [ABAP Unit](03_Topics/abap_unit/README.md)
@@ -13,6 +14,8 @@ Where an entry points at a page marked **stub**, the definition here is the whol
 **ALV** — the ABAP List Viewer: an internal table displayed as a grid with sorting, filtering, totals and Excel export, for a handful of lines of code. → [ALV](03_Topics/alv/README.md)
 
 **AMDP** — an ABAP Managed Database Procedure: a method whose body is SQLScript, executed by HANA. The last step of code pushdown, and the first that ties you to one database. → [AMDP and code pushdown](03_Topics/amdp_and_code_pushdown/README.md)
+
+**Application log** — messages stored under an object and subobject with user and timestamp (`BAL_*`, `SLG1`), so a job can be asked afterwards what it did. → [Application log](03_Topics/application_log/README.md)
 
 **ATC** — the ABAP Test Cockpit, which runs Code Inspector checks over your objects and usually gates the transport. → [ATC and Code Inspector](03_Topics/atc_and_code_inspector/README.md)
 
@@ -22,9 +25,17 @@ Where an entry points at a page marked **stub**, the definition here is the whol
 
 **`BAPIRET2`** — the structure a BAPI reports problems in: type, message id, number, text and four variables — the same pieces `MESSAGE` leaves in `sy-msg…`. → [`MESSAGE`](02_Keywords/message/README.md)
 
+**Batch input (BDC)** — driving a transaction's screens from a `BDCDATA` table, by `CALL TRANSACTION … USING` or a session in `SM35`. → [Batch input and BDC](03_Topics/batch_input/README.md)
+
 **Behaviour definition** — the RAP artefact declaring what may be created, updated, deleted, validated and determined for an entity. → [RAP](03_Topics/rap/README.md)
 
+**BOPF** — the Business Object Processing Framework, SAP's business-object model before RAP; nodes, actions, determinations, validations. → [BOPF](03_Topics/bopf/README.md)
+
 **CDS view** — a SQL view defined as versioned, transportable source, carrying annotations, associations and access control alongside the query. → [CDS views](03_Topics/cds_views/README.md)
+
+**Change document** — the old and new value of a logged field, with user and time, in `CDHDR`/`CDPOS`; written by transactions and BAPIs, not by a direct `UPDATE`. → [Change documents](03_Topics/change_documents/README.md)
+
+**Checkpoint group** — a switch (`SAAB`) that activates `BREAK-POINT ID`, `LOG-POINT ID` and `ASSERT ID` per system and user, so debugging aids can stay in shipped code. → [Checkpoint groups](02_Keywords/break_point_log_point/README.md)
 
 **Classic exception** — a function module's non-object exception: a number assigned at the call site and read back from `sy-subrc`. → [`CALL FUNCTION`](02_Keywords/call_function/README.md)
 
@@ -32,9 +43,19 @@ Where an entry points at a page marked **stub**, the definition here is the whol
 
 **Code pushdown** — doing the work on the database — Open SQL, then CDS, then AMDP — instead of transferring rows to loop over them. → [AMDP and code pushdown](03_Topics/amdp_and_code_pushdown/README.md)
 
+**`COLLECT`** — inserts a row or adds its numeric components into the row with the same non-numeric key: aggregation in one statement. → [`COLLECT`](02_Keywords/collect/README.md)
+
+**Common table expression** — `WITH +name AS ( SELECT … )`: a named subquery used like a table in the main `SELECT` (7.51). → [`WITH`](02_Keywords/with_cte/README.md)
+
+**Constructor expression** — the `VALUE`, `NEW`, `CONV`, `CAST`, `COND`, `SWITCH`, `CORRESPONDING`, `REDUCE`, `FILTER` family: an operator, a type or `#`, and parentheses. → [Constructor expressions](03_Topics/constructor_expressions/README.md)
+
 **Control break** — the `AT NEW` / `AT END OF` way of totalling per group inside a `LOOP`, replaced by `GROUP BY`. → [`LOOP AT`](02_Keywords/loop_at/README.md)
 
+**Conversion routine** — a pair of function modules (`CONVERSION_EXIT_XXXX_INPUT`/`_OUTPUT`) on a domain that map between stored and displayed form; `ALPHA` is the one everybody meets. → [Conversion routines](03_Topics/conversion_routines/README.md)
+
+
 ## D – I
+
 
 **Data element** — the DDIC layer that adds field labels, F1 help and a search help to a domain's technical type. → [DDIC, domains and data elements](03_Topics/ddic_and_domains/README.md)
 
@@ -42,33 +63,61 @@ Where an entry points at a page marked **stub**, the definition here is the whol
 
 **Domain** — the DDIC layer holding the technical type and value range that one or more data elements share. → [DDIC, domains and data elements](03_Topics/ddic_and_domains/README.md)
 
+**Dynpro** — a classic screen: layout in the Screen Painter, flow logic (`PROCESS BEFORE OUTPUT`, `PROCESS AFTER INPUT`) calling modules, fields transported by name. → [Dynpro screens](03_Topics/dynpro_screens/README.md)
+
 **Enqueue lock** — SAP's advisory lock: it blocks only code that asks for the same lock, and every `COMMIT WORK` releases it. → [LUW and locking](03_Topics/luw_and_locking/README.md)
 
 **Field symbol** — an alias for a piece of memory, written `<fs>`; `ASSIGNING` in a loop writes into the table rather than into a copy. → [`FIELD-SYMBOLS` and `ASSIGN`](02_Keywords/field_symbols/README.md)
+
+**Flow logic** — the small language of a dynpro's PBO and PAI events: `MODULE`, `FIELD`, `CHAIN`, `LOOP AT … WITH CONTROL`. → [`CALL SCREEN`](02_Keywords/call_screen/README.md)
 
 **`FOR ALL ENTRIES`** — an Open SQL addition driving a `WHERE` from an internal table; an empty driver table selects **everything**, and the result is de-duplicated. → [Open SQL](03_Topics/open_sql/README.md)
 
 **Function module** — a globally callable unit inside a function group, with a typed interface; the unit BAPIs and RFC are built from. → [Modularization](03_Topics/modularization/README.md)
 
+**Gateway (SAP Gateway)** — the component that exposes an ABAP implementation as an OData service, hand-built in `SEGW` or generated by RAP. → [OData, Gateway and Fiori](03_Topics/odata_and_fiori/README.md)
+
 **Hashed table** — an internal table with one-step lookup by full key, no index and no duplicates. → [Internal tables](03_Topics/internal_tables/README.md)
 
 **IDoc** — a structured document moved asynchronously between systems and stored with a status history, so a failure can be corrected and reprocessed. → [IDocs](03_Topics/idocs/README.md)
+
+**Implicit enhancement point** — the start and end of every method, form and include, where customer code may be inserted without a marker in SAP's source. → [Enhancement points](02_Keywords/enhancement_point/README.md)
+
+**Initial value** — the type-specific value every variable holds from birth (`0`, blanks, `00000000`, empty); tested with `IS INITIAL`. ABAP has no null. → [Initial values and null](03_Topics/initial_values_and_null/README.md)
 
 **Inline declaration** — `DATA(x) = …`, which creates the variable at the point of first write and infers its type from the operand. 7.40 and later. → [`DATA`](02_Keywords/data/README.md)
 
 **Internal table** — ABAP's only collection type, declared `STANDARD`, `SORTED` or `HASHED`; the kind is a promise about lookup cost and duplicates. → [Internal tables](03_Topics/internal_tables/README.md)
 
+
 ## L – R
+
+
+**Logical database** — a reusable retrieval program with a node hierarchy and selection screen; a report attached to one receives records in `GET` events. → [Logical databases](03_Topics/logical_databases/README.md)
 
 **LUW** — Logical Unit of Work. The *database* LUW ends at every commit; the *SAP* LUW spans a business transaction, bridged by the update task. → [LUW and locking](03_Topics/luw_and_locking/README.md)
 
+**Macro** — `DEFINE … END-OF-DEFINITION`: compile-time text substitution with `&1`…`&9`, undebuggable, obsolete for new code. → [`DEFINE`](02_Keywords/define_macro/README.md)
+
+**Mesh** — a structure of internal tables with declared associations, walked by mesh paths (`\`); rare, and the in-memory cousin of a CDS association. → [Meshes](02_Keywords/mesh/README.md)
+
 **Message class** — the `SE91` container holding numbered, translatable message texts, referenced as `e001(zfin)`. → [`MESSAGE`](02_Keywords/message/README.md)
+
+**Native SQL** — a statement sent to the database as written (`EXEC SQL`, ADBC), bypassing Open SQL's client handling, checks, buffer and escaping. → [Native SQL](03_Topics/native_sql/README.md)
+
+**Number range** — a `SNRO` object handing out sequential numbers through `NUMBER_GET_NEXT`; buffered ranges leave gaps, and a rollback never returns a number. → [Number ranges](03_Topics/number_ranges/README.md)
 
 **Open SQL** — SQL that runs on any supported database and speaks ABAP's types, with `@` escaping host variables in the strict syntax. → [Open SQL](03_Topics/open_sql/README.md)
 
+**Package** — the folder an object lives in; decides transport layer and software component, and can declare interfaces that control who may use its objects. → [Packages and namespaces](03_Topics/packages_and_namespaces/README.md)
+
 **Packed number** — `TYPE p LENGTH n DECIMALS d`: exact decimal arithmetic, and the only safe type for money. → [Numbers and currency](03_Topics/numbers_and_currency/README.md)
 
+**Parameter ID** — a three-character key on a data element under which SAP memory keeps one value per session (`SET`/`GET PARAMETER ID`), used to pre-fill screen fields. → [`EXPORT` and `IMPORT`](02_Keywords/export_import/README.md)
+
 **PCRE** — the regular-expression flavour available from 7.55 and recommended over the older POSIX `REGEX`. → [Regular expressions](03_Topics/regular_expressions/README.md)
+
+**Pragma** — `##NEEDED`, `##NO_TEXT`, `##NO_HANDLER`: a marker on a statement telling the syntax check and the inspector that a finding is intentional; pseudo comments (`"#EC`) are the older form. → [Documentation and pragmas](03_Topics/documentation_and_pragmas/README.md)
 
 **Ranges table** — the `SIGN`/`OPTION`/`LOW`/`HIGH` table behind `SELECT-OPTIONS`, usable directly in an Open SQL `IN`. → [`PARAMETERS` and `SELECT-OPTIONS`](02_Keywords/parameters_select_options/README.md)
 
@@ -78,11 +127,19 @@ Where an entry points at a page marked **stub**, the definition here is the whol
 
 **RTTI** — Run Time Type Information: `cl_abap_typedescr` and its family, describing a value's type and building new types at runtime. → [Dynamic programming](03_Topics/dynamic_programming/README.md)
 
+
 ## S – Z
+
 
 **Secondary key** — an extra index declared on an internal table, used only by reads that name it. → [Internal tables](03_Topics/internal_tables/README.md)
 
 **Selection screen** — the input screen a report gets free from its `PARAMETERS` and `SELECT-OPTIONS`, with its own event order. → [Selection screens](03_Topics/selection_screens/README.md)
+
+**Shared objects** — an application-server-wide cache (`SHMA` area classes) read by many sessions and written under a lock; per server, so a landscape has several copies. → [ABAP memory and SAP memory](03_Topics/abap_memory_and_sap_memory/README.md)
+
+**Short dump** — the `ST22` document a runtime error leaves: error name, failing line, call stack, variables, and SAP's own analysis. → [Short dumps](03_Topics/short_dumps/README.md)
+
+**Simplification item** — one documented S/4HANA change to the data model or a transaction (`MATNR` length, `KONV` → `PRCD_ELEMENTS`), found in custom code by the readiness ATC variant. → [S/4HANA custom code migration](03_Topics/s4hana_custom_code/README.md)
 
 **Sorted table** — an internal table kept in key order, searched by binary search, with optional uniqueness. → [Internal tables](03_Topics/internal_tables/README.md)
 
@@ -94,11 +151,20 @@ Where an entry points at a page marked **stub**, the definition here is the whol
 
 **Table expression** — `itab[ … ]`, reading a row as an expression; a miss raises `CX_SY_ITAB_LINE_NOT_FOUND` rather than setting `sy-subrc`. → [`READ TABLE` and table expressions](02_Keywords/read_table/README.md)
 
+**Test double** — a stand-in for a dependency in a unit test: a hand-written class behind an interface, `cl_abap_testdouble`, or the OSQL/CDS/function-module test environments. → [Test doubles](03_Topics/test_doubles/README.md)
+
 **Transport request** — the record of a change, released in development and imported into test and production in order. → [Transports](03_Topics/transports/README.md)
 
 **Update task** — the mechanism that defers database work registered with `IN BACKGROUND TASK` until `COMMIT WORK`. → [LUW and locking](03_Topics/luw_and_locking/README.md)
 
 **Variant** — a saved set of selection-screen values; usually the only input a background job has. → [Background jobs](03_Topics/background_jobs/README.md)
+
+**Work item** — one instance of a workflow task in someone's inbox. → [Workflow](03_Topics/workflow/README.md)
+
+**Work process** — the operating-system process a dispatcher hands a dialog step, job step or update to; ABAP has no threads, only more of these. → [How ABAP runs](03_Topics/how_abap_runs/README.md)
+
+**`xsdbool( )`** — turns a logical expression into `abap_true`/`abap_false` as a value; the function to use instead of `boolc( )`, whose string result does not compare equal to `abap_false`. → [Booleans](02_Keywords/boolean_functions/README.md)
+
 
 ## See also
 

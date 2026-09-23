@@ -104,3 +104,7 @@ WRITE: / 'Measure it yourself: SE30 / SAT, or GET RUN TIME FIELD.'.
 - [`LOOP AT`](../../02_Keywords/loop_at/README.md) — `INTO` against `ASSIGNING`, and `USING KEY`
 - [Debugging](../debugging/README.md) — the neighbouring skill, and some of the same transactions
 - [ATC and Code Inspector](../atc_and_code_inspector/README.md) — the checks that catch the two defects before a transport does
+- [Asking what time it is](../../02_Keywords/get_time/README.md) — `GET TIME`, `GET RUN TIME`, and the `WAIT` that commits
+- [HANA specifics](../hana_specifics/README.md) — what changes on a column store
+- [Parallel processing](../parallel_processing/README.md) — `STARTING NEW TASK`, bgRFC, server groups
+- [How ABAP runs](../how_abap_runs/README.md) — work processes and dialog steps

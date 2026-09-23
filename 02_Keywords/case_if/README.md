@@ -37,3 +37,5 @@ ENDCASE.
 - [`COND` and `SWITCH`](../cond_switch/README.md) — the same two choices as expressions
 - [`CHECK`, `CONTINUE`, `EXIT`, `RETURN`](../check_continue_exit/README.md) — leaving early instead of nesting
 - [`FIELD-SYMBOLS` and `ASSIGN`](../field_symbols/README.md) — why `IS ASSIGNED` is a different question from `IS INITIAL`
+- [`CASE TYPE OF`](../case_type_of/README.md) — branching on an object's class, and when not to
+- [Booleans](../boolean_functions/README.md) — `xsdbool( )`, `boolc( )`, and why there is no boolean type

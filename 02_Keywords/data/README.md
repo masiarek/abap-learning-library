@@ -104,3 +104,6 @@ WRITE: / 'precise', lv_precise.
 - [`VALUE`](../value/README.md) — filling a structure or table in the same breath as declaring it
 - [Numbers and currency](../../03_Topics/numbers_and_currency/README.md) — why `i`, `p`, `decfloat34` and `f` are not interchangeable
 - [Which release am I writing for?](../../03_Topics/releases_and_syntax_levels/README.md) — inline declarations need 7.40, and plenty of systems are older
+- [`STATICS`](../statics/README.md) — a local variable that survives between calls
+- [Types at a glance](../../03_Topics/types_at_a_glance/README.md) — every elementary type, with a program
+- [Initial values and null](../../03_Topics/initial_values_and_null/README.md) — ABAP has no null

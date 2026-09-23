@@ -37,3 +37,5 @@ A quick check during development, a debugging line, a background job's log, a th
 - [String templates](../string_templates/README.md) — formatting into a variable instead
 - [`PARAMETERS` and `SELECT-OPTIONS`](../parameters_select_options/README.md) — the screen in front of the list
 - [Background jobs](../../03_Topics/background_jobs/README.md) — where the list goes when nobody is watching
+- [Classic reports](../../03_Topics/classic_reports/README.md) — lists, pages, `HIDE` and `AT LINE-SELECTION`
+- [Report events](../report_events/README.md) — the blocks a report is made of, in order

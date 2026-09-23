@@ -124,3 +124,6 @@ START-OF-SELECTION.
 - [`CALL FUNCTION`](../call_function/README.md) — classic exceptions and `sy-subrc`
 - [`ASSERT`](../assert/README.md) — for the condition that must never be false
 - [`COND` and `SWITCH`](../cond_switch/README.md) — `THROW`, for a branch that should not exist
+- [`RETRY` and `RESUME`](../retry_resume/README.md) — going back after an exception
+- [`RAISE SHORTDUMP`](../raise_shortdump/README.md) — a dump on purpose, carrying the facts
+- [Short dumps](../../03_Topics/short_dumps/README.md) — reading `ST22`

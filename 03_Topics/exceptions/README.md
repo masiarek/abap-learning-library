@@ -37,3 +37,6 @@ Code that calls a BAPI, wraps it in a class, and is itself called from an OData 
 - [`CALL FUNCTION`](../../02_Keywords/call_function/README.md) — classic exceptions and `sy-subrc`
 - [`ASSERT`](../../02_Keywords/assert/README.md) — for what should be impossible
 - [BAPIs and RFC](../bapis_and_rfc/README.md) — `BAPIRET2`, the most common error shape in SAP
+- [`RETRY` and `RESUME`](../../02_Keywords/retry_resume/README.md) — going back after an exception
+- [`RAISE SHORTDUMP`](../../02_Keywords/raise_shortdump/README.md) — a dump on purpose, carrying the facts
+- [Short dumps](../short_dumps/README.md) — reading `ST22`

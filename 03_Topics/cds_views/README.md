@@ -46,3 +46,5 @@ A CDS view is consumed from Open SQL like a table: `SELECT … FROM zi_flights`.
 - [RAP](../rap/README.md) — where CDS views become the basis of a whole application
 - [Authorizations](../authorizations/README.md) — the check declared instead of coded
 - [DDIC, domains and data elements](../ddic_and_domains/README.md) — the layer underneath
+- [OData, Gateway and Fiori](../odata_and_fiori/README.md) — how ABAP reaches a browser
+- [`WITH`](../../02_Keywords/with_cte/README.md) — common table expressions in Open SQL (7.51)

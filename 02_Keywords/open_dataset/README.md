@@ -40,3 +40,5 @@ The user's own machine is a different mechanism entirely — `cl_gui_frontend_se
 - [How long is a string?](../../01_Foundations/how_long_is_a_string/README.md) — bytes against characters, with a program
 - [Authorizations](../../03_Topics/authorizations/README.md) — `S_DATASET`
 - [Background jobs](../../03_Topics/background_jobs/README.md) — why the frontend alternative is not available there
+- [Unicode and code pages](../../03_Topics/unicode_and_code_pages/README.md) — characters, bytes, and naming the code page
+- [Security](../../03_Topics/security/README.md) — injection in dynamic SQL, code and file paths

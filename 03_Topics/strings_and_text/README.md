@@ -90,3 +90,6 @@ WRITE: / 'string strlen', strlen( lv_string ).
 - [`CONCATENATE` and `SPLIT`](../../02_Keywords/concatenate_split/README.md) — the statement forms
 - [Regular expressions](../regular_expressions/README.md) — searching with patterns
 - [`CAST`, `CONV` and `EXACT`](../../02_Keywords/cast_conv/README.md) — converting without losing information quietly
+- [In-place string statements](../../02_Keywords/condense_translate_shift/README.md) — `CONDENSE`, `TRANSLATE`, `SHIFT` and their function twins
+- [Unicode and code pages](../unicode_and_code_pages/README.md) — characters, bytes, and naming the code page
+- [Conversion and comparison rules](../conversion_and_comparison_rules/README.md) — what happens between two types

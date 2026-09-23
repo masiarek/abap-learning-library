@@ -33,3 +33,4 @@ Counting rows to decide whether a table is empty is wasteful on a large table: `
 - [Internal tables](../../03_Topics/internal_tables/README.md) — the tables being counted
 - [Dynamic programming](../../03_Topics/dynamic_programming/README.md) — RTTI, the modern answer to "what type is this"
 - [`LOOP AT`](../loop_at/README.md) — `sy-tabix` and the other count
+- [System fields](../sy_fields/README.md) — `sy-subrc`, `sy-tabix`, `sy-index` and the rest

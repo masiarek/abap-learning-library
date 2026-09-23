@@ -34,3 +34,6 @@ The same model is increasingly applied on-premise through the `ABAP for Cloud De
 - [RAP](../rap/README.md) — the application model the cloud assumes
 - [CDS views](../cds_views/README.md) — the released way to read SAP's data
 - [ATC and Code Inspector](../atc_and_code_inspector/README.md) — the check variant that enforces all of this
+- [Standard classes worth knowing](../standard_classes/README.md) — the `CL_ABAP_*` shelf
+- [Packages and namespaces](../packages_and_namespaces/README.md) — where an object lives, and who may use it
+- [S/4HANA custom code migration](../s4hana_custom_code/README.md) — what breaks, and how to find it first

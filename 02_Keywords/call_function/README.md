@@ -47,3 +47,6 @@ New code should be a class — but BAPIs, RFC-enabled modules, most of SAP's own
 - [`METHODS` and parameters](../methods/README.md) — the modern equivalent of this signature
 - [`TRY`, `CATCH`, `RAISE`](../try_catch/README.md) — class-based exceptions, and why classic ones are different
 - [LUW and locking](../../03_Topics/luw_and_locking/README.md) — `IN BACKGROUND TASK` and the update task
+- [`GET BADI` and `CALL BADI`](../get_badi/README.md) — calling an enhancement spot
+- [Parallel processing](../../03_Topics/parallel_processing/README.md) — `STARTING NEW TASK`, bgRFC, server groups
+- [Number ranges](../../03_Topics/number_ranges/README.md) — the next document number, and the gaps

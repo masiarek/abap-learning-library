@@ -87,3 +87,6 @@ START-OF-SELECTION.
 - [`DESCRIBE` and `lines( )`](../../02_Keywords/describe_lines/README.md) — the old statement-shaped ancestor of RTTI
 - [Authorizations](../authorizations/README.md) — why a dynamic read needs an explicit check
 - [Performance](../performance/README.md) — dynamic access is not free, and the cost is per row
+- [Data references](../../02_Keywords/data_references/README.md) — `REF`, `REF TO data`, `->*`
+- [Security](../security/README.md) — injection in dynamic SQL, code and file paths
+- [Standard classes worth knowing](../standard_classes/README.md) — the `CL_ABAP_*` shelf

@@ -38,3 +38,6 @@ For parallel work, `CALL FUNCTION … STARTING NEW TASK` inside a job spreads wo
 - [Selection screens](../selection_screens/README.md) — variants, the job's only input
 - [Debugging](../debugging/README.md) — debugging something you cannot start
 - [File handling](../file_handling/README.md) — why the application server, not the PC
+- [`SUBMIT`](../../02_Keywords/submit/README.md) — running another report
+- [Application log](../application_log/README.md) — messages that outlive the run
+- [How ABAP runs](../how_abap_runs/README.md) — work processes and dialog steps

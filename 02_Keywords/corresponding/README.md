@@ -99,3 +99,4 @@ WRITE: / 'except ', ls_except-name, ls_except-country.
 - [`TYPES` and `CONSTANTS`](../types/README.md) — the structures whose names have to match
 - [Clean ABAP](../../03_Topics/clean_abap/README.md) — where explicit assignment beats clever copying
 - [BAPIs and RFC](../../03_Topics/bapis_and_rfc/README.md) — the interfaces where a silently dropped field costs most
+- [Constructor expressions](../../03_Topics/constructor_expressions/README.md) — the `VALUE`/`NEW`/`COND` family as a family

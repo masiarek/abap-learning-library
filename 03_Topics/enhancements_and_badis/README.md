@@ -40,3 +40,5 @@ The practical skill is **finding** the hook for a given moment in a standard tra
 - [Debugging](../debugging/README.md) — how the hook is found
 - [LUW and locking](../luw_and_locking/README.md) — why committing inside an exit is dangerous
 - [Transports](../transports/README.md) — how an enhancement travels, and what it collides with
+- [`GET BADI` and `CALL BADI`](../../02_Keywords/get_badi/README.md) — calling an enhancement spot
+- [Enhancement points](../../02_Keywords/enhancement_point/README.md) — source-level hooks in SAP's code

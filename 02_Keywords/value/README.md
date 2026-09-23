@@ -98,3 +98,4 @@ WRITE: / 'inline :', lv_rows.
 - [`TYPES` and `CONSTANTS`](../types/README.md) — where the named type comes from
 - [`NEW`](../new/README.md) — the same idea for objects and data references
 - [Changing a table](../itab_changes/README.md) — `APPEND`, `INSERT`, and which one the table kind allows
+- [Constructor expressions](../../03_Topics/constructor_expressions/README.md) — the `VALUE`/`NEW`/`COND` family as a family

@@ -119,3 +119,5 @@ START-OF-SELECTION.
 - [`DATA` — and `DATA( )`](../data/README.md) — the inferred type that `CONV` is often fixing
 - [How long is a string?](../../01_Foundations/how_long_is_a_string/README.md) — `c`, `string` and what counts as a character
 - [Numbers and currency](../../03_Topics/numbers_and_currency/README.md) — which numeric conversions lose what
+- [`CASE TYPE OF`](../case_type_of/README.md) — branching on an object's class, and when not to
+- [Conversion and comparison rules](../../03_Topics/conversion_and_comparison_rules/README.md) — what happens between two types

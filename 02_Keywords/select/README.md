@@ -115,3 +115,8 @@ START-OF-SELECTION.
 - [CDS views](../../03_Topics/cds_views/README.md) — the same query, defined once and reused
 - [`COMMIT WORK`](../commit_work/README.md) — the other half of talking to the database
 - [`AUTHORITY-CHECK`](../authority_check/README.md) — the check `SELECT` does not do
+- [Database writes](../db_writes/README.md) — `INSERT`, `UPDATE`, `MODIFY`, `DELETE` on a table, and `sy-dbcnt`
+- [`WITH`](../with_cte/README.md) — common table expressions in Open SQL (7.51)
+- [Cursors](../open_cursor_fetch/README.md) — `OPEN CURSOR`, `FETCH`, `SELECT … ENDSELECT` for sets too big to hold
+- [Native SQL statements](../exec_sql/README.md) — `EXEC SQL` and ADBC
+- [HANA specifics](../../03_Topics/hana_specifics/README.md) — what changes on a column store

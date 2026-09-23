@@ -41,3 +41,6 @@ Writing to the database from inside a BAdI or a user exit is where this bites ha
 - [`CALL FUNCTION`](../call_function/README.md) — `IN BACKGROUND TASK` and the update task
 - [BAPIs and RFC](../../03_Topics/bapis_and_rfc/README.md) — `BAPI_TRANSACTION_COMMIT`
 - [Background jobs](../../03_Topics/background_jobs/README.md) — where nobody is there to answer a dialog
+- [Database writes](../db_writes/README.md) — `INSERT`, `UPDATE`, `MODIFY`, `DELETE` on a table, and `sy-dbcnt`
+- [Asking what time it is](../get_time/README.md) — `GET TIME`, `GET RUN TIME`, and the `WAIT` that commits
+- [Cursors](../open_cursor_fetch/README.md) — `OPEN CURSOR`, `FETCH`, `SELECT … ENDSELECT` for sets too big to hold

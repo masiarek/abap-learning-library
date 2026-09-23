@@ -49,6 +49,9 @@ theme:
     logo: material/code-tags
   features:
     - navigation.indexes    # a folder's README.md becomes its section landing page
+    # Every section open by default: a reference shelf is browsed by scanning
+    # the whole list of keywords and topics, not by unfolding one at a time.
+    - navigation.expand
     - navigation.top
     - navigation.footer
     - search.suggest

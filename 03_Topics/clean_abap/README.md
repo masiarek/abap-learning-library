@@ -32,3 +32,6 @@ Most ABAP is maintained, not written. A file whose style is consistent — even 
 - [ABAP Unit](../abap_unit/README.md) — the last rule, which makes the others stick
 - [ATC and Code Inspector](../atc_and_code_inspector/README.md) — the automated half
 - [Resources](../resources/README.md) — where to find the guide itself
+- [Naming conventions](../naming_conventions/README.md) — `Z`, `Y`, namespaces, prefixes
+- [Documentation and pragmas](../documentation_and_pragmas/README.md) — `"!`, `##NO_TEXT`, `"#EC`
+- [Modern versus classic](../modern_vs_classic/README.md) — every old construct beside its replacement

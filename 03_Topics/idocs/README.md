@@ -39,3 +39,5 @@ The ABAP side of extending one is usually a BAdI or a customer function in the i
 - [Enhancements and BAdIs](../enhancements_and_badis/README.md) — where customer logic attaches
 - [Background jobs](../background_jobs/README.md) — where inbound processing usually runs
 - [`COMMIT WORK`](../../02_Keywords/commit_work/README.md) — the transaction boundary around a posting
+- [Batch input and BDC](../batch_input/README.md) — driving a transaction's screens from code
+- [Workflow](../workflow/README.md) — tasks, agents, events

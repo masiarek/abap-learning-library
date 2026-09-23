@@ -38,3 +38,5 @@ A program that downloads to the user's PC cannot be scheduled. A program that wr
 - [How long is a string?](../../01_Foundations/how_long_is_a_string/README.md) — bytes against characters, with a program
 - [Background jobs](../background_jobs/README.md) — why the frontend option disappears
 - [Authorizations](../authorizations/README.md) — `S_DATASET`
+- [Unicode and code pages](../unicode_and_code_pages/README.md) — characters, bytes, and naming the code page
+- [Security](../security/README.md) — injection in dynamic SQL, code and file paths

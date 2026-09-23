@@ -34,3 +34,5 @@ Two kinds of entry behave differently: a **workbench** request carries repositor
 - [ATC and Code Inspector](../atc_and_code_inspector/README.md) — the gate before release
 - [DDIC, domains and data elements](../ddic_and_domains/README.md) — Dictionary changes and activation
 - [Which release am I writing for?](../releases_and_syntax_levels/README.md) — a downport caught at import instead of at coding time
+- [Packages and namespaces](../packages_and_namespaces/README.md) — where an object lives, and who may use it
+- [abapGit](../abapgit/README.md) — Git for ABAP

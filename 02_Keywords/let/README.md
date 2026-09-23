@@ -38,3 +38,4 @@ Two reasons, one of them a warning:
 - [`REDUCE`](../reduce/README.md) — `INIT`, which is a `LET` with a job
 - [`COND` and `SWITCH`](../cond_switch/README.md) — the other common host
 - [Clean ABAP](../../03_Topics/clean_abap/README.md) — the readability limit these constructs share
+- [Constructor expressions](../../03_Topics/constructor_expressions/README.md) — the `VALUE`/`NEW`/`COND` family as a family

@@ -104,3 +104,4 @@ WRITE: / 'cleared to', lines( lt_std ).
 - [Internal tables](../../03_Topics/internal_tables/README.md) — which statements each table kind allows
 - [`LOOP AT`](../loop_at/README.md) — why the delete belongs outside the loop
 - [`VALUE`](../value/README.md) — building the row being inserted
+- [`COLLECT`](../collect/README.md) — totals by key without a loop

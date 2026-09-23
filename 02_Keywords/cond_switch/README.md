@@ -90,3 +90,5 @@ WRITE: / 'band ', lv_band.
 - [`REDUCE`](../reduce/README.md) — where `COND` most often appears, inside a `NEXT`
 - [`TRY`, `CATCH`, `RAISE`](../try_catch/README.md) — what `THROW` is throwing
 - [`ASSERT`](../assert/README.md) — for the case that should be impossible
+- [Booleans](../boolean_functions/README.md) — `xsdbool( )`, `boolc( )`, and why there is no boolean type
+- [Constructor expressions](../../03_Topics/constructor_expressions/README.md) — the `VALUE`/`NEW`/`COND` family as a family
