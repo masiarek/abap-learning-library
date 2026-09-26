@@ -31,9 +31,13 @@ Where an entry points at a page marked **stub**, the definition here is the whol
 
 **BOPF** — the Business Object Processing Framework, SAP's business-object model before RAP; nodes, actions, determinations, validations. → [BOPF](03_Topics/bopf/README.md)
 
+**Cardinality** — of a foreign key, how many rows on each side can match. `SE11` writes the check table first (`1:CN`); Dictionary DDL writes the foreign key table first (`[0..*,1]`), so the two notations are inverted. → [DDIC, domains and data elements](03_Topics/ddic_and_domains/README.md)
+
 **CDS view** — a SQL view defined as versioned, transportable source, carrying annotations, associations and access control alongside the query. → [CDS views](03_Topics/cds_views/README.md)
 
 **Change document** — the old and new value of a logged field, with user and time, in `CDHDR`/`CDPOS`; written by transactions and BAPIs, not by a direct `UPDATE`. → [Change documents](03_Topics/change_documents/README.md)
+
+**Check table** — the table a foreign key points at; a value in the foreign key field must exist there. → [DDIC, domains and data elements](03_Topics/ddic_and_domains/README.md)
 
 **Checkpoint group** — a switch (`SAAB`) that activates `BREAK-POINT ID`, `LOG-POINT ID` and `ASSERT ID` per system and user, so debugging aids can stay in shipped code. → [Checkpoint groups](02_Keywords/break_point_log_point/README.md)
 
@@ -152,6 +156,8 @@ Where an entry points at a page marked **stub**, the definition here is the whol
 **Table expression** — `itab[ … ]`, reading a row as an expression; a miss raises `CX_SY_ITAB_LINE_NOT_FOUND` rather than setting `sy-subrc`. → [`READ TABLE` and table expressions](02_Keywords/read_table/README.md)
 
 **Test double** — a stand-in for a dependency in a unit test: a hand-written class behind an interface, `cl_abap_testdouble`, or the OSQL/CDS/function-module test environments. → [Test doubles](03_Topics/test_doubles/README.md)
+
+**Text table** — a table whose key is a check table's key plus a language field, holding that table's translated descriptions; its foreign key is of type *key fields of a text table* and cardinality `1:CN`. → [DDIC, domains and data elements](03_Topics/ddic_and_domains/README.md)
 
 **Transport request** — the record of a change, released in development and imported into test and production in order. → [Transports](03_Topics/transports/README.md)
 
