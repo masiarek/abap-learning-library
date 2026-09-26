@@ -26,7 +26,7 @@ A local `TYPES` declaration has none of that. This is why a field on a selection
 
 ## Foreign keys and cardinality
 
-A foreign key on a table field says that the field's values must exist in another table, the **check table**, and it records how many rows on each side can match. That second part is the **cardinality**, and it is the same word the sibling math library defines in [cardinality of sets ↗](https://masiarek.github.io/math-learning-library/03_Sets/cardinality/index.html): |A| is the number of members of a set. Here the sets are "the check-table rows matching one foreign-key row" and "the foreign-key rows matching one check-table row", and the notation records the allowed range of each count.
+A foreign key on a table field says that the field's values must exist in another table, the **check table**, and it records how many rows on each side can match. That second part is the **cardinality**, and it is the same word the sibling math library defines in [cardinality of sets ↗](https://masiarek.github.io/math-learning-library/04_Sets/cardinality/index.html): |A| is the number of members of a set. Here the sets are "the check-table rows matching one foreign-key row" and "the foreign-key rows matching one check-table row", and the notation records the allowed range of each count.
 
 Take invoices and customers. `VBRK` is the foreign key table, its customer field points at `KNA1`, the check table. Every invoice names exactly one customer, and a customer has 0, 1 or many invoices.
 
@@ -85,4 +85,4 @@ Cardinality is also what a join consumes. An inner join along a `1:CN` relations
 - [Table maintenance](../table_maintenance/README.md) — `SM30` and the generator
 - [Text elements and translation](../text_elements_and_translation/README.md) — nothing a user reads belongs in a literal
 - [Open SQL](../open_sql/README.md) — the joins that walk a foreign key
-- [Cardinality of sets ↗](https://masiarek.github.io/math-learning-library/03_Sets/cardinality/index.html) — the math library: |A| defined, the product rule, and the same word in types, indexes and telemetry
+- [Cardinality of sets ↗](https://masiarek.github.io/math-learning-library/04_Sets/cardinality/index.html) — the math library: |A| defined, the product rule, and the same word in types, indexes and telemetry
