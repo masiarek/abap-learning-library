@@ -104,7 +104,7 @@ NAV_ORDER: dict[str, list[str]] = {
     "03_Topics": [
         "README.md",
         "types_at_a_glance", "initial_values_and_null", "conversion_and_comparison_rules",
-        "internal_tables", "open_sql", "strings_and_text", "dates_and_times",
+        "internal_tables", "sets_in_abap", "open_sql", "strings_and_text", "dates_and_times",
         "numbers_and_currency", "constructor_expressions", "modern_vs_classic",
         "oo_abap", "exceptions", "abap_unit", "test_doubles", "releases_and_syntax_levels",
         "ddic_and_domains", "conversion_routines", "table_types_and_buffering", "table_maintenance",

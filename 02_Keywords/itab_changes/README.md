@@ -105,3 +105,4 @@ WRITE: / 'cleared to', lines( lt_std ).
 - [`LOOP AT`](../loop_at/README.md) — why the delete belongs outside the loop
 - [`VALUE`](../value/README.md) — building the row being inserted
 - [`COLLECT`](../collect/README.md) — totals by key without a loop
+- [Sets in ABAP](../../03_Topics/sets_in_abap/README.md) — `INSERT` into a unique table as set building, and why `INSERT LINES OF` is different

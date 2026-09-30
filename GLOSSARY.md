@@ -137,6 +137,8 @@ Where an entry points at a page marked **stub**, the definition here is the whol
 
 **Secondary key** — an extra index declared on an internal table, used only by reads that name it. → [Internal tables](03_Topics/internal_tables/README.md)
 
+**Set** — no built-in type: an internal table whose whole line is a `UNIQUE` key, with membership, union, intersection and difference each written as an idiom. → [Sets in ABAP](03_Topics/sets_in_abap/README.md)
+
 **Selection screen** — the input screen a report gets free from its `PARAMETERS` and `SELECT-OPTIONS`, with its own event order. → [Selection screens](03_Topics/selection_screens/README.md)
 
 **Shared objects** — an application-server-wide cache (`SHMA` area classes) read by many sessions and written under a lock; per server, so a landscape has several copies. → [ABAP memory and SAP memory](03_Topics/abap_memory_and_sap_memory/README.md)

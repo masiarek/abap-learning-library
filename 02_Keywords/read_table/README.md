@@ -112,3 +112,4 @@ WRITE: / 'def   ', ls_def-name.
 - [`VALUE`](../value/README.md) — where `OPTIONAL` and `DEFAULT` come from
 - [`TRY`, `CATCH`, `RAISE`](../try_catch/README.md) — catching the miss when a miss is normal
 - [System fields](../sy_fields/README.md) — `sy-subrc`, `sy-tabix`, `sy-index` and the rest
+- [Sets in ABAP](../../03_Topics/sets_in_abap/README.md) — `line_exists( )` as the membership test
