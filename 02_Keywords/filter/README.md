@@ -83,3 +83,4 @@ WRITE: / 'manual  ', lines( lt_manual ).
 - [Internal tables](../../03_Topics/internal_tables/README.md) — secondary keys, and what they cost on every write
 - [`LOOP AT`](../loop_at/README.md) — `USING KEY`, the same idea in the statement form
 - [Performance](../../03_Topics/performance/README.md) — when a key earns its keep
+- [Sets in ABAP](../../03_Topics/sets_in_abap/README.md) — `IN` and `EXCEPT IN` as intersection and difference

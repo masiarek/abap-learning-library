@@ -14,6 +14,7 @@ Pages here follow the same rule as everywhere else in this library: a program in
 | [Initial values and null](initial_values_and_null/README.md) | 101 | ABAP has no null — every variable has a value from birth, and SQL `NULL` stops at the boundary |
 | [Conversion and comparison rules](conversion_and_comparison_rules/README.md) | 201 | What happens between two types, silently, on assignment and on comparison |
 | [Internal tables](internal_tables/README.md) | 201 | Three table kinds, three promises about lookup cost — pick the one your access pattern needs |
+| [Sets in ABAP](sets_in_abap/README.md) | 201 | No set type: a table with a unique key, and one idiom each for union, intersection and difference |
 | [Open SQL](open_sql/README.md) | 201 | The database is not a file: what to push down, and the two silent traps in `FOR ALL ENTRIES` |
 | [Strings and text](strings_and_text/README.md) | 201 | `string` grows, `c` is padded forever, and the functions that work on both |
 | [Dates and times](dates_and_times/README.md) | 201 | `d` is eight characters you can do arithmetic on — and a time zone you have to name |

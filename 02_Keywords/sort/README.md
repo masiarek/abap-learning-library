@@ -86,3 +86,4 @@ WRITE: / 'rows left', lines( lt_rows ).
 - [`LOOP AT`](../loop_at/README.md) — `GROUP BY`, which groups by value and needs no prior sort
 - [Performance](../../03_Topics/performance/README.md) — when sorting is the cheap part
 - [Control breaks](../at_new/README.md) — `AT NEW`, `AT END OF`, `SUM` — the older way to total per group
+- [Sets in ABAP](../../03_Topics/sets_in_abap/README.md) — a unique key instead of deduplicating afterwards

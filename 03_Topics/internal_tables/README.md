@@ -112,3 +112,4 @@ ENDLOOP.
 - [`COLLECT`](../../02_Keywords/collect/README.md) — totals by key without a loop
 - [Control breaks](../../02_Keywords/at_new/README.md) — `AT NEW`, `AT END OF`, `SUM` — the older way to total per group
 - [Meshes](../../02_Keywords/mesh/README.md) — tables with declared associations
+- [Sets in ABAP](../sets_in_abap/README.md) — a table with a unique key used as a set: union, intersection, difference
