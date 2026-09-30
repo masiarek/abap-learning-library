@@ -75,7 +75,7 @@ WRITE: / 'rows left', lines( lt_rows ).
 
 ## If you are coming from another language
 
-- **Python.** `list.sort()` is stable, always, and `dict.fromkeys()` de-duplicates regardless of order. Both ABAP statements are less forgiving than the Python habits they resemble.
+- **Python.** `list.sort()` is stable, always, and `dict.fromkeys()` de-duplicates without sorting, keeping the first copy in first-seen order; `itertools.groupby` is the adjacent-only rule of `DELETE ADJACENT DUPLICATES`. Both ABAP statements are less forgiving than the Python habits they resemble. The Python library's [Which duplicate survives ↗](https://masiarek.github.io/python-learning-library/04_Names_and_Objects/which_duplicate_survives/index.html) compares every idiom, including the dict comprehension that keeps the last copy in the first copy's place.
 - **Rust.** `sort_by_key` (stable) and `sort_unstable_by_key`, with `dedup()` carrying the same adjacent-only rule as ABAP's — Rust's documentation says so loudly, and so does this page.
 - **SQL.** `ORDER BY` and `SELECT DISTINCT`, neither of which cares what order the rows were in.
 
